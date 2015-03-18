@@ -14,6 +14,13 @@ These are the AMIs references and launched by our CurbFormation tempates.
 * [ntp-curbix](https://github.com/ridecharge/base-curbix) - This AMI is use for NTP services.
 * [nat-curbix](https://github.com/ridecharge/base-curbix) - This AMI is used for NAT services.
 
+## Docker Containers
+* [statsd-docker](https://github.com/ridecharge/statsd-docker) - Container to provide the statsd/librato service to other services.
+* [nginx-docker](https://github.com/ridecharge/nginx-docker) - Nginx container to be linked to customer app containers to provide proxy and other web configurations. Should be linked against the consul container for configuration.
+* [consul-docker](https://github.com/ridecharge/consul-docker) - Container to provide either the consul cluster service or local proxy service. This is determined based on whether an instance is tagged with Role:consul or not. 
+* [aws-startup-utils-docker](https://github.com/ridecharge/aws-startup-utils-docker) - Collection of startup scripts to allow for various things at instance startup, including but not limited to DNS registration, NAT Monitoring/Failover, and ENI Attachment. These will be typically limited to special infrastructure (NAT, NTP, Bastion).
+* [logging-docker](https://github.com/ridecharge/logging-docker) - container provides syslog-ng to rest of the system.
+
 ## Ansible Roles
 These's are ansible-galaxy roles used to provision AMI's and docker images.  These typically are only created when more complex configuration is needed than simple shell configuration by docker and packer.  They will typically be self contained with no dependencies due to how ansible-galaxy works.  Packer AMI descriptions and Dockfiles will typically be where roles are pulled together to make up a machine.
 * [base-ansible-role](https://github.com/ridecharge/base-ansible-role) - This role is used in building the base-curbix image. It includes base packages, and user configurations.
