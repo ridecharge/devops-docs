@@ -11,8 +11,8 @@ CurbFormation is the set of projects which define our full AWS environment using
 ## Curbix AMIs
 These are the AMIs references and launched by our CurbFormation tempates.
 * [base-curbix](https://github.com/ridecharge/base-curbix) - The base ami for all other amis and ec2 instances using docker. 
-* [ntp-curbix](https://github.com/ridecharge/base-curbix) - This AMI is use for NTP services.
-* [nat-curbix](https://github.com/ridecharge/base-curbix) - This AMI is used for NAT services.
+* [ntp-curbix](https://github.com/ridecharge/ntp-curbix) - This AMI is use for NTP services.
+* [nat-curbix](https://github.com/ridecharge/nat-curbix) - This AMI is used for NAT services.
 
 ## Docker Containers
 * [statsd-docker](https://github.com/ridecharge/statsd-docker) - Container to provide the statsd/librato service to other services.
