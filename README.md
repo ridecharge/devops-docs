@@ -7,6 +7,7 @@ CurbFormation is the set of projects which define our full AWS environment using
 * [curbformation](https://github.com/ridecharge/curbformation) - This is the main cf python package that use the templates to make CloudFormation API calls (CRUD)
 * [curbformation-templates](https://github.com/ridecharge/curbformation-templates) - These are the json templates which define our CloudFormation environment.
 * [curbformation-test](https://github.com/ridecharge/curbformation-tests) - This is a test project meant to be able to quickly validate the state of a given environment.
+
 ## Curbix AMIs
 These are the AMIs references and launched by our CurbFormation tempates.
 * [base-curbix](https://github.com/ridecharge/base-curbix) - The base ami for all other amis and ec2 instances using docker. 
