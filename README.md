@@ -21,6 +21,14 @@ These are the AMIs references and launched by our CurbFormation tempates.
 * [aws-startup-utils-docker](https://github.com/ridecharge/aws-startup-utils-docker) - Collection of startup scripts to allow for various things at instance startup, including but not limited to DNS registration, NAT Monitoring/Failover, and ENI Attachment. These will be typically limited to special infrastructure (NAT, NTP, Bastion).
 * [logging-docker](https://github.com/ridecharge/logging-docker) - container provides syslog-ng to rest of the system.
 
+## Custom Services
+These are custom services used to help expose information and manage our environments. These will also include Dockerfiles to build deployable containers.
+* [cf-versions](https://github.com/ridecharge/cf-versions) - This service will allow for easy viewing of services deploy version and endpoints.
+
+## Config with consul and confd
+consul is service for centralization of configuration and service discovery. confd is a tool which allows for easy popuating templates from consul's key/value store. Custom apps will use the key/value api to pull their configurations from the environment. 
+* [curbd](https://github.com/ridecharge/curbd) - This repo holds static json config files to be stored in consul as well as well as scripts to populate consul from the json files and CloudFormation outputs for generated resources.
+
 ## Ansible Roles
 These's are ansible-galaxy roles used to provision AMI's and docker images.  These typically are only created when more complex configuration is needed than simple shell configuration by docker and packer.  They will typically be self contained with no dependencies due to how ansible-galaxy works.  Packer AMI descriptions and Dockfiles will typically be where roles are pulled together to make up a machine.
 * [base-ansible-role](https://github.com/ridecharge/base-ansible-role) - This role is used in building the base-curbix image. It includes base packages, and user configurations.
@@ -28,3 +36,5 @@ These's are ansible-galaxy roles used to provision AMI's and docker images.  The
 * [ntp-ansible-role](https://github.com/ridecharge/ntp-ansible-role) - This role configures either the NTP service configuration for the ntp-curbix images or NTP clients for the base-curbix image
 * [logging-ansible-role](https://github.com/ridecharge/logging-ansible-role) - This role configures logrotate and syslog-ng. It is used in the logging-docker container to setup a shared syslog-ng server and in the base-curbix image to forward system logs to the container syslog-ng server. 
 * [python3-ansible-role](https://github.com/ridecharge/python3-ansible-role) - This role installs python3 and pip3 as well as any additional pip packages provided in a playbook.
+
+
