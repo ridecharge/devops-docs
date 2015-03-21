@@ -23,7 +23,7 @@ These are the AMIs references and launched by our CurbFormation tempates.
 
 ## Custom Services
 These are custom services used to help expose information and manage our environments. These will also include Dockerfiles to build deployable containers.
-* [cf-versions](https://github.com/ridecharge/cf-versions) - This service will allow for easy viewing of services deploy version and endpoints.
+* [cfversions](https://github.com/ridecharge/cfversions) - This service will allow for easy viewing of services deploy version and endpoints.
 
 ## Config with consul and confd
 consul is service for centralization of configuration and service discovery. confd is a tool which allows for easy popuating templates from consul's key/value store. Custom apps will use the key/value api to pull their configurations from the environment. 
