@@ -13,3 +13,9 @@ OSX does not natively support docker. To get around this boot2docker was created
 1. boot2docker init
 2. boot2docker up
 3. then copy/paste the environment variables it outputs.
+
+## Reinit boot2docker
+Occasionally you need to reinit boot2docker.  Run
+* boot2docker destroy
+
+and then the commands from before to init it again. 
