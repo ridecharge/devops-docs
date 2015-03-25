@@ -40,3 +40,10 @@ pyenv virtualenv 3.4.2 curbformation
  ```
 
  and have access to the same environment.
+
+ # Tests
+ nosetests is used to run tests and produce code coverage.  Typically there will be a `bin/run_test.sh` file to execute these tests which will run
+
+ ```
+ nosetests --with-coverage --cover-inclusive --cover-package=package
+ ```
