@@ -12,6 +12,9 @@ docker run -e LOCAL_MODE=true -p 8500:8500 ridecharge/consul
 
 The above command takes a environment variable `LOCAL_MODE` that will configure our consul service to run a single node instead of the full cluster in EC2.
 
-We expose port 8500 on the host to allow for easy access to populate data in the store.
+`p -8500:8500` will expose port 8500 on the host to allow for easy access to populate data in the store.
 
-Remember that we are running boot2docker so if you wanted to curl the consul end point it would be `curl \`boot2docker ip`:8500/path`
+Remember that we are running boot2docker so if you wanted to curl the consul end point it would be 
+```shell
+curl `boot2docker ip`:8500/path`
+```
