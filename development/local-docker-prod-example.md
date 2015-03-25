@@ -29,8 +29,8 @@ Next we need to populate the configuration data in consul. We've developed a too
 This point we are assuming you already have installed python3 and have curbd installed by pip.
 
 ```shell
-curbd from_cf --host `boot2docker ip` --port 8500 --environment test --local env
-curbd from_cf --host `boot2docker ip` --port 8500 --environment test --local cfversions
+curbd from_cf --host `boot2docker ip` --port 8500 --environment mock env
+curbd from_cf --host `boot2docker ip` --port 8500 --environment mock cfversions
 ```
 
 This command typically calls out to CloudFormation and describes the stack who's name is a combination of the `--environment` and the positional parameter (so `test-env` and `test-cfversions` in this case).  But we've also passed the `--local` flag which allows us populate from a json file mocking the CF API data, and ignoring the `--environment` flag.  
