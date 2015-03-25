@@ -1,5 +1,6 @@
 # Installing Packer on OSX
 https://www.packer.io/
+
 Used to build machine images, including AMIs, Vagrant boxes, etc.
 ## Installation
 1. brew tap homebrew/binary

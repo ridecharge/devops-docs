@@ -1,4 +1,6 @@
 # Installing Docker on OSX
+https://www.docker.com/
+
 We'll be installing boot2docker to enable docker to run on OSX.
 
 ## Installation
