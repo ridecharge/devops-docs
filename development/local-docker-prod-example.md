@@ -81,13 +81,20 @@ consulConfig = &api.Config{
 client, err := api.NewClient(consulConfig)
 ```
 
+## logging-docker
+This container runs a syslog server. This isn't very important for local machines, but nginx will complain if its not linked against a logging container since it is configured to use syslog. We'll go ahead and insert a fake token for loggly so we don't index the logs.
+
+```shell
+docker run -d --restart=always --name logging -e ENVIRONMENT=test -e LOGGLY_TOKEN=abc ridecharge/logging:latest
+```
+
 ## nginx-docker
 [nginx-docker](https://github.com/ridecharge/nginx-docker)
 
 The last thing running in our stack is the nginx docker container.
 
 ```shell
-docker run -p 8080:8080 -e SERVICE_NAME=cfversions --link consul:consul --link cfversions:app --name nginx ridecharge/nginx 
+docker run -p 8080:8080 -e SERVICE_NAME=cfversions --link logging:logging --link consul:consul --link cfversions:app --name nginx ridecharge/nginx 
 ```
 Here we link against the `consul` and `cfversions` containers. You'll notice that we alias the cfversions link as `app` which allows us to refer to it in our nginx configuration as `app` for the backend.
 
